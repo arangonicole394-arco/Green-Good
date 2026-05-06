@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green&amp;Good - Contacto</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f2;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    .nav {
+      background: #2d6a2d;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 54px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .nav-brand i {
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-links a.active {
+      color: #fff;
+      border-bottom: 2px solid #7fc97f;
+      padding-bottom: 3px;
+    }
+
+    /* PAGE LAYOUT */
+    .page-body {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      min-height: calc(100vh - 54px - 52px);
+    }
+
+    /* INFO PANEL */
+    .info-panel {
+      background: #1e4d1e;
+      padding: 2.5rem 2rem;
+      color: #fff;
+    }
+
+    .info-panel h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #fff;
+    }
+
+    .info-panel .subtitle {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 2rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-icon i {
+      font-size: 18px;
+      color: #9ed99e;
+    }
+
+    .info-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 13.5px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.6;
+    }
+
+    .info-value a {
+      color: #9ed99e;
+      text-decoration: none;
+    }
+
+    .info-value a:hover {
+      text-decoration: underline;
+    }
+
+    .divider {
+      border: none;
+      border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+      margin: 1.5rem 0;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 0.5px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .social-btn i {
+      font-size: 17px;
+    }
+
+    .social-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+    }
+
+    /* FORM PANEL */
+    .form-panel {
+      background: #fff;
+      padding: 2.5rem 2.5rem;
+    }
+
+    .form-panel h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 0.25rem;
+    }
+
+    .form-sub {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 1.75rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .form-group.full {
+      margin-bottom: 14px;
+    }
+
+    label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px 13px;
+      font-size: 14px;
+      font-family: inherit;
+      color: #222;
+      background: #f9f9f7;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+      appearance: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #2d6a2d;
+      box-shadow: 0 0 0 3px rgba(45, 106, 45, 0.12);
+      background: #fff;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #bbb;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.6;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      background: #2d6a2d;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s;
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-submit i {
+      font-size: 17px;
+    }
+
+    .btn-submit:hover {
+      background: #1e4d1e;
+    }
+
+    .btn-submit:active {
+      transform: scale(0.99);
+    }
+
+    /* FOOTER */
+    .footer-bar {
+      background: #1e4d1e;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-bar .copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-badge i {
+      font-size: 13px;
+      color: #9ed99e;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .page-body {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-panel {
+        padding: 2rem 1.25rem;
+      }
+
+      .info-panel {
+        padding: 2rem 1.25rem;
+      }
+
+      .footer-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <i class="ti ti-leaf"></i>
+      Green&amp;Good
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html" class="active">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- CUERPO PRINCIPAL -->
+  <div class="page-body">
+
+    <!-- PANEL DE INFORMACIÓN -->
+    <div class="info-panel">
+      <h2>Información de contacto</h2>
+      <p class="subtitle">Estamos aquí para ayudarte</p>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="ti ti-map-pin"></i></div>
+        <div>
+          <p class="info-label">Dirección</p>
+          <p class="info-value">Calle 45 #23-15, Medellín<br>Antioquia, Colombia</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="ti ti-phone"></i></div>
+        <div>
+          <p class="info-label">Teléfono</p>
+          <p class="info-value">+57 (4) 555-1234<br>WhatsApp: +57 310 555-5678</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="ti ti-clock"></i></div>
+        <div>
+          <p class="info-label">Horario</p>
+          <p class="info-value">Lun – Sáb: 10:00 AM – 9:00 PM<br>Domingos: 11:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="ti ti-mail"></i></div>
+        <div>
+          <p class="info-label">Email</p>
+          <p class="info-value">
+            <a href="mailto:info@greenandgood.com">info@greenandgood.com</a><br>
+            <a href="mailto:pedidos@greenandgood.com">pedidos@greenandgood.com</a>
+          </p>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <p class="info-label" style="margin-bottom: 10px;">Síguenos en redes</p>
+      <div class="socials">
+        <a href="#" class="social-btn" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+        <a href="#" class="social-btn" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+        <a href="#" class="social-btn" aria-label="Twitter"><i class="ti ti-brand-twitter"></i></a>
+      </div>
+    </div>
+
+    <!-- PANEL DEL FORMULARIO -->
+    <div class="form-panel">
+      <h3>Envíanos un mensaje</h3>
+      <p class="form-sub">Te responderemos lo antes posible</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" placeholder="Tu apellido">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="correo@ejemplo.com">
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000">
+        </div>
+      </div>
+
+      <div class="form-group full">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto" placeholder="¿En qué podemos ayudarte?">
+      </div>
+
+      <div class="form-group full">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">
+        <i class="ti ti-send"></i>
+        Enviar mensaje
+      </button>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-bar">
+    <span class="copy">© 2024 Green&amp;Good · Todos los derechos reservados</span>
+    <span class="footer-badge">
+      <i class="ti ti-leaf"></i>
+      Comida saludable para un estilo de vida mejor
+    </span>
+  </footer>
+
+</body>
+</html>
